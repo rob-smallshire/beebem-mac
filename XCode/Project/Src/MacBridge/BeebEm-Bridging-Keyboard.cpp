@@ -45,13 +45,13 @@ extern BeebWin* mainWin;
  
  *       0x00      0x01  0x02  0x03 0x04 0x05 0x06 0x07 0x08 0x09    0x0a   0x0b   0x0c
  * 0x00  Shift     Ctrl  <------- starup up DIP swicthes ------->
- * 0x10  Q         3     4     5    f4   8    f7   =-   ~^   Left    KP 6   KP 7
- * 0x20  f0        W     E     T    7    I    9    0    £    Down    KP 8   KP 9
+ * 0x10  Q         3     4     5    f4   8    f7   -=   ^~   Left    KP 6   KP 7
+ * 0x20  f0        W     E     T    7    I    9    0    _£   Down    KP 8   KP 9
  * 0x30  1         2     D     R    6    U    O    P    [{   Up      KP +   KP -   KP Return
  * 0x40  CapsLck   A     X     F    Y    J    K    @    :*   Return  KP /   KP Del KP .
  * 0x50  ShiftLck  S     C     G    H    N    L    ;+   ]}   Delete  KP #   KP *   KP ,
- * 0x60  Tab       Z     SPC   V    B    M    <,   >.   /?   Copy    KP 0   KP 1   KP 3
- * 0x70  ESC       f1    f2    f3   f5   f6   f8   f9   \    Right   KP 4   KP 5   KP 2
+ * 0x60  Tab       Z     SPC   V    B    M    ,<   .>   /?   Copy    KP 0   KP 1   KP 3
+ * 0x70  ESC       f1    f2    f3   f5   f6   f8   f9   \|   Right   KP 4   KP 5   KP 2
  */
 
 int kmap[] =
