@@ -37,14 +37,17 @@ class BeebSKView: SKView {
     override var acceptsFirstResponder: Bool { return true }
     
     override func keyDown(with event: NSEvent) {
-        let cs = event.characters?.cString(using: .ascii)?[0] ?? 64
-        
+        // Get Unicode scalar value of first character, or 0 if no characters
+        // Don't use .ascii encoding - it fails for non-ASCII chars and defaults to '@' (64)
+        let cs = event.characters?.unicodeScalars.first?.value ?? 0
+
 //        print("keydown \(cs)")
 		beeb_handlekeys(kEventRawKeyDown, Int(event.keyCode), Int(cs))
     }
-    
+
     override func keyUp(with event: NSEvent) {
-        let cs = event.characters?.cString(using: .ascii)?[0] ?? 64
+        // Get Unicode scalar value of first character, or 0 if no characters
+        let cs = event.characters?.unicodeScalars.first?.value ?? 0
 //        print("keyup \(cs)")
 		beeb_handlekeys(kEventRawKeyUp, Int(event.keyCode), Int(cs))
     }
